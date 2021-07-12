@@ -8,4 +8,7 @@ module.exports = ((app) => {
 
     app.route('/mahasiswa')
         .get(myJson.getAllData);
+
+    app.route('/mahasiswa/:id')
+        .get(myJson.getDataById);
 })
