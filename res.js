@@ -3,7 +3,7 @@
 exports.ok = function(req, res, message){
     let data = {
         status: 200,
-        message: "Success",
+        message: message,
         data: req
     }
 

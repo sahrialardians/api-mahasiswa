@@ -11,4 +11,7 @@ module.exports = ((app) => {
 
     app.route('/mahasiswa/:id')
         .get(myJson.getDataById);
+
+    app.route('/mahasiswa')
+        .post(myJson.addData);
 })
