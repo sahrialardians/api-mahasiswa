@@ -44,3 +44,32 @@ exports.addData = ((req, res) => {
         }
     })
 })
+
+// update data mahasiswa
+exports.editData = ((req, res) => {
+    let id = req.body.id;
+    let nim = req.body.nim;
+    let nama = req.body.nama;
+    let jurusan = req.body.jurusan;
+
+    connection.query(`UPDATE mahasiswa SET nim=?, nama=?, jurusan=? WHERE id=?`, [id, nim, nama, jurusan], (error, rows, cols) => {
+        if(error){
+            console.log(error)
+        }else{
+            response.ok("Successfully updated data!", res)
+        }
+    })
+})
+
+// delete data mahasiswa
+exports.deleteData = ((req, res) => {
+    let id = req.body.id;
+
+    connection.query(`DELETE FROM mahasiswa WHERE id=?`, [id], (error, rows, cols) => {
+        if(error){
+            console.log(error)
+        }else{
+            response.ok("Successfully deleted data!", res)
+        }
+    })
+})
