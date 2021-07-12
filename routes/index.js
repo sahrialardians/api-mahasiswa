@@ -14,4 +14,10 @@ module.exports = ((app) => {
 
     app.route('/mahasiswa')
         .post(myJson.addData);
+
+    app.route('/mahasiswa/:id')
+        .put(myJson.editData);
+
+    app.route('/mahasiswa/:id')
+        .delete(myJson.deleteData);
 })
