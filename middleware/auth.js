@@ -17,7 +17,7 @@ exports.register = ((req, res) => {
     }
 
     // cek email uda daftar belum
-    let query = "SELECT email FROM ?? WHERE ??";
+    let query = "SELECT email FROM ?? WHERE ??=?";
     let table = ["users", "email", data.email];
 
     query = mysql.format(query, table);
@@ -39,7 +39,7 @@ exports.register = ((req, res) => {
                     }
                 }));
             } else {
-                response.ok('The email has already registered!')
+                response.ok('The email has already registered!', res)
             }
         }
     }))
