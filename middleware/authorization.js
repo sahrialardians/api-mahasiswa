@@ -1,8 +1,9 @@
 const jwt = require('jsonwebtoken');
 const config = require('../config/secret');
 
-const verification = (roles) => {
+const verification = () => {
     return (req, res, next) => {
+        let role = req.body.role;
         // check authorization header
         let tokenBearer = req.headers.authorization;
 
@@ -17,7 +18,7 @@ const verification = (roles) => {
                         message: "Token not registered!"
                     });
                 } else {
-                    if (roles == "USER") {
+                    if (role == "USER") {
                         req.decoded;
                         next();
                     } else {

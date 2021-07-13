@@ -8,7 +8,7 @@ router.post('/register', auth.register);
 router.post('/login', auth.login);
 
 // endpoint with authorization
-router.get('/test-auth', verification("USER"), auth.notAkses);
+router.get('/test-auth', verification(), auth.notAkses);
 
 module.exports = router;
 
