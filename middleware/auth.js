@@ -98,4 +98,9 @@ exports.login = ((req, res) => {
             }
         }
     }));
+});
+
+// test page with authorization
+exports.notAkses = ((req, res) => {
+    response.ok("This page only user for User Role!", res);
 })
